@@ -1,29 +1,28 @@
-import type { NextPage } from "next";
+import { AppProps } from "next/app";
+import Head from "next/head";
 import { useRouter } from "next/router";
+import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../auth/Auth";
 import Blogs from "../components/Blogs";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
+import Navbar from "../components/Navbar";
 import Stats from "../components/Stats";
-import { useAuthState } from "react-firebase-hooks/auth";
-import Loading from "../components/Loading";
-import Dashboard from "../components/Dashboard";
 
-const Home: NextPage = (user, { loading }) => {
-	// const [user, loading] = useAuthState(auth);
+const Login = () => {
+	const [user, loading] = useAuthState(auth);
 	const router = useRouter();
 	if (loading) {
-		return <Loading />;
+		return <progress className="progress h-[80vh] bg-base-200 flex justify-center items-center w-56"></progress>;
 	}
-
-	if (!user) {
-		router.push("/login");
+	if (user) {
+		router.push("/");
 	}
 
 	return (
 		<div className="bg-base-200 min-w-screen">
-			<Dashboard />
-			<h1>You are logged in?</h1>
+			<Hero />
 			<div className="h-full mt-[20vh] mb-[10vh] flex justify-center items-center">
 				<Stats />
 			</div>
@@ -35,4 +34,4 @@ const Home: NextPage = (user, { loading }) => {
 	);
 };
 
-export default Home;
+export default Login;
