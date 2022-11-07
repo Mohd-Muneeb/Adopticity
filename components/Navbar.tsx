@@ -19,7 +19,7 @@ const Navbar = (user: any) => {
 	};
 
 	return (
-		<div className="navbar w-[90vw] bg-base-300 ml-[5vw] rounded-2xl">
+		<div className="navbar w-[90vw] bg-base-300 ml-[5vw] z-10 rounded-2xl">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<label tabIndex={0} className="btn btn-ghost btn-circle">

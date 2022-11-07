@@ -22,14 +22,7 @@ const Home: NextPage = (user, { loading }) => {
 
 	return (
 		<div className="bg-base-200 min-w-screen">
-			<Dashboard />
-			<h1>You are logged in?</h1>
-			<div className="h-full mt-[20vh] mb-[10vh] flex justify-center items-center">
-				<Stats />
-			</div>
-			<div className="shadow">
-				<Blogs />
-			</div>
+			<Dashboard user={user} />
 			<Footer />
 		</div>
 	);

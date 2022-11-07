@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../auth/Auth";
+import Link from "next/link";
 
 const Hero = () => {
 	const [Email, setEmail] = useState("");
@@ -72,9 +73,9 @@ const Hero = () => {
 								<label className="label">
 									<p>
 										Don`t have an Account yet?{" "}
-										<a href="/sign-up" className="opacity-90 hover:underline hover:opacity-100">
+										<Link href="/sign-up" className="opacity-90 hover:underline hover:opacity-100">
 											Sign Up!
-										</a>
+										</Link>
 									</p>
 								</label>
 								{ErrorMessage === "" ? "" : <h1 className="text-[hsl(var(--er))]">{ErrorMessage}</h1>}

@@ -19,8 +19,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div className="bg-base-200 pt-4">
-				<Navbar user={user} />
+			<div className="bg-base-200 pt-4 font-poppins">
+				<Navbar user={user?.displayName} />
 				<Component {...pageProps} user={user} loading={loading} />
 			</div>
 		</>
