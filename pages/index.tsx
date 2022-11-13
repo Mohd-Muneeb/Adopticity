@@ -1,28 +1,24 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { auth } from "../auth/Auth";
-import Blogs from "../components/Blogs";
 import Footer from "../components/Footer";
-import Hero from "../components/Hero";
-import Stats from "../components/Stats";
-import { useAuthState } from "react-firebase-hooks/auth";
 import Loading from "../components/Loading";
 import Dashboard from "../components/Dashboard";
 
-const Home: NextPage = (user, { loading }) => {
+const Home: NextPage = (props: any) => {
 	// const [user, loading] = useAuthState(auth);
+	console.log(props.user, props.loading);
 	const router = useRouter();
-	if (loading) {
+	if (props.loading) {
 		return <Loading />;
 	}
-
-	if (!user) {
+	if (props.user == null) {
 		router.push("/login");
+		console.log("Login Muneeb");
 	}
 
 	return (
-		<div className="bg-base-200 min-w-screen">
-			<Dashboard user={user} />
+		<div className="bg-base-100 min-w-screen">
+			<Dashboard user={props.user} loading={props.loading} />
 			<Footer />
 		</div>
 	);

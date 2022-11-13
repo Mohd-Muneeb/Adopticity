@@ -7,6 +7,7 @@ import { auth } from "../auth/Auth";
 import Blogs from "../components/Blogs";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
+import Loading from "../components/Loading";
 import Navbar from "../components/Navbar";
 import Stats from "../components/Stats";
 
@@ -14,7 +15,7 @@ const Login = () => {
 	const [user, loading] = useAuthState(auth);
 	const router = useRouter();
 	if (loading) {
-		return <progress className="progress h-[80vh] bg-base-200 flex justify-center items-center w-56"></progress>;
+		return <Loading />;
 	}
 	if (user) {
 		router.push("/");

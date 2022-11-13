@@ -19,23 +19,39 @@
 	}
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
-* {
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"); */
+/* * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+} */
+
+.wrapper {
+	display: grid;
+	/* height: 100vh; */
+	padding: 2rem;
+	place-items: center;
+	margin: 2rem;
 }
-html {
-	font-family: "Montserrat";
+
+@media only screen and (max-width: 768px) {
+	/* For mobile phones: */
+	.wrapper {
+		/* width: 100%; */
+		padding: 1rem;
+		margin: 1rem;
+	}
 }
+
 section {
 	min-height: 30vh;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #1e1f26;
+	/* background-color: #1e1f26; */
 }
+
 .container {
 	width: 90%;
 	max-width: 1000px;

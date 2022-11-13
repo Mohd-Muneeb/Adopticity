@@ -94,7 +94,7 @@ const Hero = () => {
 					<img
 						src="https://wallpapercave.com/dwp1x/wp581113.jpg"
 						alt="Cute cat Image"
-						className="rounded-xl transition ease-in-out delay-150 font-bold group-hover:scale-105 group-hover:translate-x-4 shadow-xl"
+						className="rounded-xl transition m-4 ease-in-out delay-150 font-bold group-hover:scale-105 group-hover:translate-x-4 shadow-xl"
 					/>
 					<div className="p-8 group">
 						<h1 className="font-bold text-4xl mb-4 bg-left-bottom bg-gradient-to-r from-[hsl(var(--s))] to-[hsl(var(--sc))] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:90%_2px] transition-all duration-500 ease-out">

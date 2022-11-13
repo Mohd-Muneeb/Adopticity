@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Footer = (props: any) => {
 	return (
-		<footer className="footer footer-center p-8 bg-base-200 text-base-content rounded">
+		<footer className="footer footer-center p-8 bg-base-100 text-base-content rounded">
 			<div className="grid grid-flow-col gap-4">
 				<a href="/about" className="link link-hover">
 					About us

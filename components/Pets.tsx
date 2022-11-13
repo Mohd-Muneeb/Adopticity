@@ -1,90 +1,25 @@
 import React from "react";
+import PetCard from "./PetCard";
 
 const Pets = () => {
 	return (
-		<div className="grid gap-8 p-4"><section>
-        <div className="container">
-          <div className="left"></div>
-          <div className="right">
-            <div className="content">
-              <h1>This is a heading</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda dolore reprehenderit ullam blanditiis ex sapiente pariatur tempore incidunt facilis?</p>
-              <a href="#" className="btn">Click Me</a>
-            </div>
-          </div>
-        </div>
-      </section>
-			<div className="card lg:card-side bg-base-100 shadow-xl">
-				<figure>
-					<img src="https://placeimg.com/400/400/arch" alt="Album" />
-				</figure>
-				<div className="card-body">
-					<h2 className="card-title">New album is released!</h2>
-					<p>Click the button to listen on Spotiwhy app.</p>
-					<div className="card-actions justify-end">
-						<button className="btn btn-primary">Listen</button>
-					</div>
-				</div>
+		<div>
+			<div className="mt-8 md:mt-12 ">
+				<h1 className="text-3xl m-4 text-center">Start choosing your companion now!</h1>
+				<p className="text-xl m-4 text-center">
+					We have a wide variety of pets to choose from and we think you`ll find anything you are looking for.
+				</p>
 			</div>
-			<div className="card lg:card-side bg-base-100 shadow-xl">
-				<figure>
-					<img src="https://placeimg.com/400/400/arch" alt="Album" />
-				</figure>
-				<div className="card-body">
-					<h2 className="card-title">New album is released!</h2>
-					<p>Click the button to listen on Spotiwhy app.</p>
-					<div className="card-actions justify-end">
-						<button className="btn btn-primary">Listen</button>
-					</div>
-				</div>
-			</div>
-			<div className="card lg:card-side bg-base-100 shadow-xl">
-				<figure>
-					<img src="https://placeimg.com/400/400/arch" alt="Album" />
-				</figure>
-				<div className="card-body">
-					<h2 className="card-title">New album is released!</h2>
-					<p>Click the button to listen on Spotiwhy app.</p>
-					<div className="card-actions justify-end">
-						<button className="btn btn-primary">Listen</button>
-					</div>
-				</div>
-			</div>
-			<div className="card lg:card-side bg-base-100 shadow-xl">
-				<figure>
-					<img src="https://placeimg.com/400/400/arch" alt="Album" />
-				</figure>
-				<div className="card-body">
-					<h2 className="card-title">New album is released!</h2>
-					<p>Click the button to listen on Spotiwhy app.</p>
-					<div className="card-actions justify-end">
-						<button className="btn btn-primary">Listen</button>
-					</div>
-				</div>
-			</div>
-			<div className="card lg:card-side bg-base-100 shadow-xl">
-				<figure>
-					<img src="https://placeimg.com/400/400/arch" alt="Album" />
-				</figure>
-				<div className="card-body">
-					<h2 className="card-title">New album is released!</h2>
-					<p>Click the button to listen on Spotiwhy app.</p>
-					<div className="card-actions justify-end">
-						<button className="btn btn-primary">Listen</button>
-					</div>
-				</div>
-			</div>
-			<div className="card lg:card-side bg-base-100 shadow-xl">
-				<figure>
-					<img src="https://placeimg.com/400/400/arch" alt="Album" />
-				</figure>
-				<div className="card-body">
-					<h2 className="card-title">New album is released!</h2>
-					<p>Click the button to listen on Spotiwhy app.</p>
-					<div className="card-actions justify-end">
-						<button className="btn btn-primary">Listen</button>
-					</div>
-				</div>
+			<div className="p-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+				<main className="type-1">
+					<PetCard />
+					<PetCard />
+					<PetCard />
+				</main>
+				<main className="type-2">
+					<PetCard />
+					<PetCard />{" "}
+				</main>
 			</div>
 		</div>
 	);
