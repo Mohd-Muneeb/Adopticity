@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { MouseEventHandler } from "react";
 import { getAuth, signOut } from "firebase/auth";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const Navbar = (user: any) => {
 	const router = useRouter();
@@ -74,7 +75,7 @@ const Navbar = (user: any) => {
 						<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
 							<div className="w-10 rounded-full">
 								{/* <img src="https://placeimg.com/80/80/people" /> */}
-								<img src="https://firebasestorage.googleapis.com/v0/b/adopticity.appspot.com/o/user%2Fprofile-pics%2Fezgif.com-gif-maker.gif?alt=media&token=c147c038-d525-44dc-a231-509606990d65" />
+								<Image src="https://firebasestorage.googleapis.com/v0/b/adopticity.appspot.com/o/user%2Fprofile-pics%2Fezgif.com-gif-maker.gif?alt=media&token=c147c038-d525-44dc-a231-509606990d65" alt="Something here" />
 							</div>
 						</label>
 						<ul

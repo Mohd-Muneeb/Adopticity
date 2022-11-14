@@ -1,10 +1,11 @@
+import Image from "next/image";
 import React from "react";
 
 const PetCard = () => {
 	return (
 		<div className="group wrapper bg-bottom  bg-gradient-to-r from-[hsl(var(--n))] to-[hsl(var(--n))] bg-[length:1%_2px] bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out bg-base-200 rounded-2xl md:rounded-xl antialiased">
 			<div className="min-w-full">
-				<img
+				<Image
 					src="https://source.unsplash.com/random/350x350"
 					alt=" random imgee"
 					className="w-full object-cover object-center rounded-lg shadow-md opacity-70 transition-opacity delay-100 group-hover:opacity-100"
