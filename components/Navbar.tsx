@@ -19,7 +19,7 @@ const Navbar = (user: any) => {
 	};
 
 	return (
-		<div className="navbar w-[90vw] bg-base-300 ml-[5vw] z-10 rounded-2xl">
+		<nav className="navbar w-[90vw] bg-base-300 ml-[5vw] z-10 rounded-2xl">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -45,11 +45,20 @@ const Navbar = (user: any) => {
 						<li>
 							<Link href="/">Homepage</Link>
 						</li>
+
 						<li>
-							<Link href="/portfolio">Portfolio</Link>
+							<Link href="/pets">Pets</Link>
+						</li>
+						<li>
+							<Link href="https://mohdmuneeb.live" target="_blank">
+								Portfolio
+							</Link>
 						</li>
 						<li>
 							<Link href="/about">About</Link>
+						</li>
+						<li>
+							<Link href="/contact">Contact Us</Link>
 						</li>
 					</ul>
 				</div>
@@ -82,15 +91,13 @@ const Navbar = (user: any) => {
 								<a>Settings</a>
 							</li>
 							<li>
-								<button onClick={(e) => handleSignOut(e)}>
-									Logout
-								</button>
+								<button onClick={(e) => handleSignOut(e)}>Logout</button>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
-		</div>
+		</nav>
 	);
 };
 

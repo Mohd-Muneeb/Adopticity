@@ -6,6 +6,7 @@ import { auth } from "../auth/Auth";
 import Pets from "./Pets";
 import "../assets/dashboardhero.png";
 import Recommendations from "./Recommendations";
+import RecentSearchs from "./RecentSearchs";
 
 function Dashboard(props: any) {
 	const [User, setUser] = useState<String>();
@@ -24,7 +25,7 @@ function Dashboard(props: any) {
 	return (
 		<>
 			<main className="w-full">
-				<section className="ease-in-out transition duration-150 w-[90vw] group ml-[5vw] my-8 flex bg-gradient-to-tr via-[hsl(var(--a))] to-[hsl(var(--s))] from-[hsl(var(--pf))] rounded-2xl pt-8 items-center justify-center flex-col min-h-full md:flex-row justify-items-stretch gap-8">
+				<section className="ease-in-out transition duration-150 w-[85vw] group ml-[7.5vw] my-8 flex bg-gradient-to-tr via-[hsl(var(--a))] to-[hsl(var(--s))] from-[hsl(var(--pf))] rounded-2xl pt-8 items-center justify-center flex-col min-h-full md:flex-row justify-items-stretch gap-8">
 					<div className="max-w-full md:max-w-[60%] flex flex-col items-center md:items-start p-12">
 						<h1 className="font-lexend font-semibold flex text-[hsl(var(--nf))] justify-center items-start flex-col cursive text-3xl md:text-5xl text-center md:text-left  mb-4 bg-left-bottom bg-gradient-to-r from-[hsl(var(--n))] to-[hsl(var(--n))] bg-[length:1%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
 							Find your <br /> perfect pet!
@@ -44,14 +45,18 @@ function Dashboard(props: any) {
 							className="min-h-[300px] transition ease-in-out duration-150 group-hover:-translate-y-6 group-hover:scale-105"
 							width={700}
 							height={700}
-							// fill
 						/>
 					</div>
 				</section>
-				<hr className="h-[2px] w-[90vw] bg-[hsl(var(--nc))] ml-[5vw] mb-8" />
-				<section className="bg-base-100 rounded-xl min-h-[50vh] w-[85vw] ml-[7.5vw] ">
+				<hr className="h-[2px] opacity-30 w-[90vw] bg-[hsl(var(--n))] ml-[5vw] mb-8" />
+				<section className="bg-base-100 rounded-xl min-h-[50vh] w-[80vw] ml-[10vw] ">
 					<Recommendations />
 				</section>
+				<hr className="h-[2px] w-[90vw] opacity-30 bg-[hsl(var(--n))] ml-[5vw] my-8" />
+				<section className="w-[80vw] ml-[10vw]">
+					<RecentSearchs />
+				</section>
+				<hr className="h-[2px] w-[90vw] opacity-30 bg-[hsl(var(--n))] ml-[5vw] my-8" />
 			</main>
 		</>
 	);
