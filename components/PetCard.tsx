@@ -2,12 +2,20 @@ import Image from "next/image";
 import React from "react";
 
 const PetCard = () => {
+	function handleClick(e: any) {
+		window.location.href = `/pets/pug`;
+	}
 	return (
-		<div className="group wrapper bg-bottom  bg-gradient-to-r from-[hsl(var(--n))] to-[hsl(var(--n))] bg-[length:1%_2px] bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out bg-base-200 rounded-2xl md:rounded-xl antialiased">
+		<div
+			onClick={(e) => handleClick(e)}
+			className="group wrapper bg-bottom  bg-gradient-to-r from-[hsl(var(--n))] to-[hsl(var(--n))] bg-[length:1%_2px] bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out bg-base-200 rounded-2xl md:rounded-xl antialiased"
+		>
 			<div className="min-w-full">
 				<Image
 					src="https://source.unsplash.com/random/350x350"
 					alt=" random imgee"
+					width={100}
+					height={100}
 					className="w-full object-cover object-center rounded-lg shadow-md opacity-70 transition-opacity delay-100 group-hover:opacity-100"
 				/>
 
@@ -28,10 +36,11 @@ const PetCard = () => {
 							$1800
 							<span className="text-gray-600 text-sm"> /wk</span>
 						</div>
-						<div className="mt-4">
+						<div className="my-2">
 							<span className="text-[hsl(var(--a))] text-md font-semibold">4/5 ratings </span>
-							<span className="text-sm text-gray-600">(based on 234 ratings)</span>
+							<span className="text-sm text-gray-600">(234 ratings)</span>
 						</div>
+						<button className="btn btn-outline  rounded-md">Buy Now!</button>
 					</div>
 				</div>
 			</div>

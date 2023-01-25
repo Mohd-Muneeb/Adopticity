@@ -22,15 +22,15 @@ module.exports = {
 			"cupcake",
 			{
 				mytheme: {
-					primary: "#FF7F50",
+					primary: "#DBE2EF",
 
-					secondary: "#FE828C",
+					secondary: "#3F72AF",
 
-					accent: "#EBCFC4",
+					accent: "#112D4E",
 
 					neutral: "#0000",
 
-					"base-100": "#FFFFFF",
+					"base-100": "#F9F7F7",
 
 					info: "#3ABFF8",
 
@@ -48,6 +48,6 @@ module.exports = {
 		rtl: false,
 		prefix: "",
 		lightTheme: "cupcake",
-		darkTheme: "cupcake",
+		darkTheme: "dark",
 	},
 };

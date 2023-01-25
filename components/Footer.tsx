@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Link from "next/link";
 
 const Footer = (props: any) => {
 	return (
 		<footer className="footer footer-center p-8 bg-base-100 text-base-content rounded">
 			<div className="grid grid-flow-col gap-4">
-				<a href="/about" className="link link-hover">
+				<Link href="/about" className="link link-hover">
 					About us
-				</a>
+				</Link>
 				<a className="link link-hover">Contact</a>
 				{/* <a className="link link-hover">Jobs</a> */}
 				{/* <a className="link link-hover">Press kit</a> */}

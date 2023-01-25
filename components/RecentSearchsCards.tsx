@@ -26,7 +26,7 @@ const RecentSearchsCards = () => {
 				</div>
 				<div className="absolute opacity-20 hover:opacity-100 top-12 right-12">
 					<Link href="/pets">
-						<Image src={arrow} alt="Right arrow" height={30} />
+						<Image src={arrow} alt="Right arrow" height={30} width={30}/>
 					</Link>
 				</div>
 			</div>

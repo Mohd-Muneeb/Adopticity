@@ -65,7 +65,7 @@ const Navbar = (user: any) => {
 				</div>
 			</div>
 			<div className="navbar-center">
-				<Link className="btn btn-ghost normal-case text-xl" href="/">
+				<Link className="btn btn-ghost rounded-sm normal-case text-xl" href="/">
 					Adopticity
 				</Link>
 			</div>
@@ -73,9 +73,9 @@ const Navbar = (user: any) => {
 				<div className="flex-none gap-2">
 					<div className="dropdown dropdown-end">
 						<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-							<div className="w-10 rounded-full">
+							<div className="w-10 rounded-full relative">
 								{/* <img src="https://placeimg.com/80/80/people" /> */}
-								<Image src="https://firebasestorage.googleapis.com/v0/b/adopticity.appspot.com/o/user%2Fprofile-pics%2Fezgif.com-gif-maker.gif?alt=media&token=c147c038-d525-44dc-a231-509606990d65" alt="Something here" />
+								<Image src="https://firebasestorage.googleapis.com/v0/b/adopticity.appspot.com/o/user%2Fprofile-pics%2Fezgif.com-gif-maker.gif?alt=media&token=c147c038-d525-44dc-a231-509606990d65" alt="Something here" fill/>
 							</div>
 						</label>
 						<ul
