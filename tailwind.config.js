@@ -48,6 +48,6 @@ module.exports = {
 		rtl: false,
 		prefix: "",
 		lightTheme: "cupcake",
-		darkTheme: "dark",
+		darkTheme: "cupcake",
 	},
 };

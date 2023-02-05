@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../auth/Auth";
-import { doc, setDoc, Timestamp } from "firebase/firestore";
+import { collection, doc, setDoc, Timestamp } from "firebase/firestore";
 import Footer from "../components/Footer";
-import { db } from "../db/firebase";
+import { db } from "../db/collections/firebase";
 import { storage } from "../db/files";
 import { ref, uploadBytes } from "firebase/storage";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -12,8 +12,7 @@ import Loading from "../components/Loading";
 
 const SignUp = (props: any) => {
 	const [user, loading] = useAuthState(auth);
-	// const loading = true;
-	// const user = false;
+
 	const router = useRouter();
 	if (loading) {
 		return <Loading />;
@@ -40,7 +39,7 @@ const SignUpForm = () => {
 	const [Password, setPassword] = useState<string>("");
 	const [RetypePassword, setRetypePassword] = useState<string>("");
 	const [SignUpError, setSignUpError] = useState<string>("");
-	const [Username, setUsername] = useState<string>("");
+	const [UID, setUID] = useState<string>("");
 	const [File, setFile] = useState<Blob>();
 
 	const handleSignUp = async () => {
@@ -53,10 +52,27 @@ const SignUpForm = () => {
 		}
 
 		createUserWithEmailAndPassword(auth, Email, Password)
-			.then((userCredential) => {
+			.then(async (userCredential) => {
 				// Signed in
 				const user = userCredential.user;
-				// props.setUser(user);
+				setUID(user.uid);
+				console.log("User has been created with ", user.uid);
+				await setDoc(doc(db, "users", user.uid), {
+					name: `${FirstName} ${SecondName}`,
+					email: `${Email}`,
+					uid: user.uid,
+					metadata: user.metadata,
+					phone: user.phoneNumber,
+					provider: user.providerId,
+					orders: [],
+					token: "",
+					address: {},
+					cartID: "",
+					wishlist: [],
+					servicesHistory: [],
+					activeServices: [],
+				});
+				uploadImages();
 			})
 			.catch((error) => {
 				const errorCode = error.code;
@@ -64,23 +80,17 @@ const SignUpForm = () => {
 				setSignUpError(error.Message);
 			});
 
-		// Add a new document in collection "cities"
-		await setDoc(doc(db, "users", Username), {
-			name: `${FirstName} ${SecondName}`,
-			email: `${Email}`,
-		});
-
-		uploadImages();
+		// Add a new document in collection "users"
 	};
 
 	const uploadImages = () => {
-		const storageRef = ref(storage, `user/profile-pics/${Username}-profilepic`);
+		const storageRef = ref(storage, `user/profile-pics/${UID}-profilepic`);
 		const bytes = new Uint8Array([0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x2c, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x21]);
 
 		const metadata = {
 			contentType: "image/jpeg",
-			user: Username,
-			title: `${Username}-profile-pic`,
+			user: UID,
+			title: `${UID}-profile-pic`,
 			uploadedAt: Timestamp,
 		};
 
@@ -91,7 +101,7 @@ const SignUpForm = () => {
 	};
 
 	return (
-		<div className="bg-base-300 rounded-2xl shadow-2xl p-12 flex flex-col w-full mx-4  md:w-1/3 items-center max-w-4xl transition duration-1000 ease-in">
+		<div className="bg-base-200 rounded-2xl shadow-2xl p-12 flex flex-col min-w-[60vw] mx-4  md:w-1/3 items-center max-w-4xl transition duration-1000 ease-in">
 			<h3 className="text-xl font-semibold m-6 underline">Create Account!</h3>
 			<div className="flex flex-col items-center gap-4 justify-center mt-2">
 				<div className="flex flex-col md:flex-row">
@@ -114,8 +124,8 @@ const SignUpForm = () => {
 						/>
 					</div>
 				</div>
-				<div className="mb-2">
-					<div className="m-2">
+				<div className="mb-2 flex flex-col w-full gap-4">
+					{/* <div className="m-2">
 						<label>
 							<span className="text-[hsl(var(--p))]">@</span>Username
 						</label>
@@ -125,23 +135,23 @@ const SignUpForm = () => {
 							placeholder="Username"
 							onChange={(e) => setUsername(e.target.value)}
 						/>
-					</div>
-					<div className="m-2">
+					</div> */}
+					<div className="m-2 flex flex-col w-full">
 						<label>Email</label>
 						<input
 							type="email"
-							className="input w-full max-w-xs"
+							className="input w-full"
 							placeholder="Email"
 							onChange={(e) => setEmail(e.target.value)}
 						/>
 					</div>
-					<div className="m-2">
-						<label>Password</label>
-						<section className="flex gap-2 w-full">
+					<div className="m-2 flex flex-col w-full">
+						<label className="m-0">Password</label>
+						<div className="flex gap-2 w-full ">
 							<input
 								type={ShowPassword ? "text" : "password"}
 								placeholder="Password(keep it safe)"
-								className="input w-full max-w-xs"
+								className="input w-full "
 								onChange={(e) => setPassword(e.target.value)}
 							/>
 							<label className="swap relative bg-base-200 p-2 rounded-xl text-center shadow-md">
@@ -149,15 +159,15 @@ const SignUpForm = () => {
 								<div className="swap-on">HIDE</div>
 								<div className="swap-off">SEE</div>
 							</label>
-						</section>
+						</div>
 					</div>
-					<div className="m-2">
+					<div className="m-2 flex flex-col w-full">
 						<label>Re-enter Password</label>
 						<input
 							type="password"
 							onChange={(e) => setRetypePassword(e.target.value)}
 							placeholder="Retype that secure password"
-							className="input w-full max-w-xs"
+							className="input w-full"
 						/>
 					</div>
 				</div>
@@ -171,7 +181,7 @@ const SignUpForm = () => {
 				</button>
 			</div>
 			<p className="mt-4 text-sm">
-				Already have an account?<a className="link">Sign In</a>
+				Already have an account? <a className="link">Sign In</a>
 			</p>
 		</div>
 	);

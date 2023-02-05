@@ -18,7 +18,6 @@ const about = (props: any) => {
 				<a
 					href="https://www.blogearns.com/2021/05/free-about-us-page-generator.html"
 					rel="do-follow"
-					// style="color: inherit; text-decoration: none;"
 				>
 					online website
 				</a>
