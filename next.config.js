@@ -9,7 +9,7 @@ const nextConfig = {
 
 module.exports = {
 	images: {
-		domains: ["googleapis.com", "firebasestorage.googleapis.com", "localhost", "source.unsplash.com", "cdn.dribbble.com"],
+		domains: ["googleapis.com", "firebasestorage.googleapis.com", "localhost", "images.unsplash.com", "source.unsplash.com", "cdn.dribbble.com"],
 	},
 	reactStrictMode: true,
 	swcMinify: true,

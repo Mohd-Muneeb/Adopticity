@@ -7,10 +7,10 @@ import packaging from "../public/package.svg";
 const ProductHeroDetails = () => {
 	const router = useRouter();
 	const { petid } = router.query;
-	const ProductName = petid?.replace("-", " ");
+	const ProductName = petid?.toString().replaceAll("-", " ");
 	return (
-		<div className="w-full">
-			<h1 className="font-lexend text-3xl uppercase font-medium my-2">{ProductName}</h1>
+		<div className="w-full min-h-[75vh] bg-base-200 p-8  flex flex-col justify-start rounded-lg">
+			<h1 className="font-lexend text-2xl uppercase font-medium my-2">{ProductName}</h1>
 			{/* <hr className="my-2" /> */}
 			<div>
 				<div className="rating">
@@ -24,7 +24,7 @@ const ProductHeroDetails = () => {
 				</div>
 			</div>
 			<hr className="my-2" />
-			<h1 className="text-3xl font-medium my-1 text-neutral">
+			<h1 className="text-2xl font-medium my-1 text-neutral">
 				<sup className="text-sm ">Rs</sup>
 				&nbsp;2000
 			</h1>
@@ -52,7 +52,9 @@ const ProductHeroDetails = () => {
 			</div>
 			<hr className="my-2" />
 
-			<h1 className="font-poppins font-light">
+			{/* //Optinal Description, will Add later for sure! */}
+
+			<h1 className="font-light text-sm">
 				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur possimus quae sed. Delectus
 				consequuntur commodi ipsum? Alias ipsam, praesentium assumenda esse expedita voluptate natus beatae quis
 				necessitatibus minima rem deleniti.
