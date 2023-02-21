@@ -5,6 +5,8 @@ import Router, { useRouter } from "next/router";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import ProductDetailsBody from "../../components/ProductDetailsBody";
 import ProductReviews from "../../components/ProductReviews";
+import Footer from "../../components/Footer";
+import ProductPageSuggestions from "../../components/ProductPageSuggestions";
 
 const ProductPage = () => {
 	return (
@@ -17,6 +19,8 @@ const ProductPage = () => {
 			</div>
 			<ProductDetailsBody />
 			<ProductReviews />
+			<ProductPageSuggestions />
+			<Footer />
 		</div>
 	);
 };

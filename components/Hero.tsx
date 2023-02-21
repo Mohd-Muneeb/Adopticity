@@ -34,7 +34,7 @@ const Hero = () => {
 	};
 	return (
 		<>
-			<div className="hero min-h-[90vh] bg-base-200">
+			<div className="hero min-h-[90vh] bg-base-100">
 				<div className="hero-content flex-col lg:flex-row-reverse">
 					<div className="text-center ml-8 lg:text-left">
 						<h1 className="text-5xl font-bold">Login now!</h1>
@@ -90,7 +90,7 @@ const Hero = () => {
 					</div>
 				</div>
 			</div>
-			<div className="hero bg-base-200">
+			<div className="hero bg-base-100">
 				<div className="hero-content group flex-col md:flex-row transition-all duration-300 ease-in-out p-12 bg-base-300 rounded-xl">
 					<img
 						src="https://wallpapercave.com/dwp1x/wp581113.jpg"

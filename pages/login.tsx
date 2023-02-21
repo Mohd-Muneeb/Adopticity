@@ -22,7 +22,7 @@ const Login = () => {
 	}
 
 	return (
-		<div className="bg-base-200 min-w-screen">
+		<div className="bg-base-100 min-w-screen">
 			<Hero />
 			<div className="h-full mt-[20vh] mb-[10vh] flex justify-center items-center">
 				<Stats />

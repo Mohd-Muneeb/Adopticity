@@ -69,8 +69,7 @@ const SignUpForm = () => {
 					address: {},
 					cartID: "",
 					wishlist: [],
-					servicesHistory: [],
-					activeServices: [],
+					servicesHistory: []
 				});
 				uploadImages();
 			})
@@ -101,7 +100,7 @@ const SignUpForm = () => {
 	};
 
 	return (
-		<div className="bg-base-200 rounded-2xl shadow-2xl p-12 flex flex-col min-w-[60vw] mx-4  md:w-1/3 items-center max-w-4xl transition duration-1000 ease-in">
+		<div className="bg-base-200 rounded-md shadow-2xl p-12 flex flex-col min-w-[60vw] mx-4  md:w-1/3 items-center max-w-4xl transition duration-1000 ease-in">
 			<h3 className="text-xl font-semibold m-6 underline">Create Account!</h3>
 			<div className="flex flex-col items-center gap-4 justify-center mt-2">
 				<div className="flex flex-col md:flex-row">
@@ -111,7 +110,7 @@ const SignUpForm = () => {
 							type="text"
 							onChange={(e) => setFirstName(e.target.value)}
 							placeholder="Type here"
-							className="input w-full max-w-xs"
+							className="input rounded-md w-full max-w-xs"
 						/>
 					</div>
 					<div className="m-2">
@@ -120,22 +119,11 @@ const SignUpForm = () => {
 							type="text"
 							placeholder="Type here"
 							onChange={(e) => setSecondName(e.target.value)}
-							className="input w-full max-w-xs"
+							className="input rounded-md w-full max-w-xs"
 						/>
 					</div>
 				</div>
 				<div className="mb-2 flex flex-col w-full gap-4">
-					{/* <div className="m-2">
-						<label>
-							<span className="text-[hsl(var(--p))]">@</span>Username
-						</label>
-						<input
-							type="text"
-							className="input w-full max-w-xs"
-							placeholder="Username"
-							onChange={(e) => setUsername(e.target.value)}
-						/>
-					</div> */}
 					<div className="m-2 flex flex-col w-full">
 						<label>Email</label>
 						<input
@@ -173,10 +161,10 @@ const SignUpForm = () => {
 				</div>
 				<input
 					type="file"
-					className="file-input w-full max-w-xs"
+					className="file-input rounded-md  w-full max-w-xs"
 					onChange={(e: any) => setFile(e.target.files[0])}
 				/>
-				<button className="btn" onClick={handleSignUp}>
+				<button className="btn rounded-md btn-outline" onClick={handleSignUp}>
 					Sign Up
 				</button>
 			</div>
